@@ -1,12 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaSearch, FaBell, FaUser, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="w-full  h-16 fixed top-0 right-0  z-40 md:pl-16 ">
+    <nav
+      className={`w-full h-16 fixed top-0 right-0 z-40 md:pl-16 transition-all duration-300
+      ${isScrolled ? "bg-white/10 backdrop-blur-sm " : "bg-white"}
+    `}
+    >
       <div className="h-full max-w-7xl mx-auto px-4 flex items-center justify-between">
         {/* Mobile Search Overlay */}
         {isSearchOpen && (
