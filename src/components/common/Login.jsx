@@ -85,12 +85,14 @@ const Login = () => {
           </div>
 
           {/* Submit Button */}
-          <button
-            type="submit"
-            className="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-all duration-200 shadow-md hover:shadow-lg hover:ring-2 hover:ring-indigo-500"
-          >
-            Sign in
-          </button>
+          <Link to="/user">
+            <button
+              type="submit"
+              className="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-all duration-200 shadow-md hover:shadow-lg hover:ring-2 hover:ring-indigo-500"
+            >
+              Sign in
+            </button>
+          </Link>
 
           {/* Sign Up Link */}
           <p className="text-center text-sm text-gray-300">

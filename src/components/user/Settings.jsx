@@ -26,8 +26,9 @@ const Settings = () => {
 
         <div className="bg-white rounded-xl shadow-sm">
           {/* Settings Navigation */}
+
           <div className="border-b border-gray-200">
-            <nav className="flex space-x-4 px-6">
+            <nav className="flex flex-wrap space-x-4 px-6">
               <button
                 onClick={() => setActiveTab("security")}
                 className={`py-4 px-2 font-medium border-b-2 transition-colors ${
@@ -41,7 +42,62 @@ const Settings = () => {
                   <span>Security</span>
                 </div>
               </button>
-              {/* Add more nav buttons similarly */}
+
+              <button
+                onClick={() => setActiveTab("notifications")}
+                className={`py-4 px-2 font-medium border-b-2 transition-colors ${
+                  activeTab === "notifications"
+                    ? "border-blue-600 text-blue-600"
+                    : "border-transparent text-gray-500 hover:text-gray-700"
+                }`}
+              >
+                <div className="flex items-center space-x-2">
+                  <FaBell />
+                  <span>Notifications</span>
+                </div>
+              </button>
+
+              <button
+                onClick={() => setActiveTab("preferences")}
+                className={`py-4 px-2 font-medium border-b-2 transition-colors ${
+                  activeTab === "preferences"
+                    ? "border-blue-600 text-blue-600"
+                    : "border-transparent text-gray-500 hover:text-gray-700"
+                }`}
+              >
+                <div className="flex items-center space-x-2">
+                  <FaPalette />
+                  <span>Preferences</span>
+                </div>
+              </button>
+
+              <button
+                onClick={() => setActiveTab("currency")}
+                className={`py-4 px-2 font-medium border-b-2 transition-colors ${
+                  activeTab === "currency"
+                    ? "border-blue-600 text-blue-600"
+                    : "border-transparent text-gray-500 hover:text-gray-700"
+                }`}
+              >
+                <div className="flex items-center space-x-2">
+                  <FaDollarSign />
+                  <span>Currency</span>
+                </div>
+              </button>
+
+              <button
+                onClick={() => setActiveTab("language")}
+                className={`py-4 px-2 font-medium border-b-2 transition-colors ${
+                  activeTab === "language"
+                    ? "border-blue-600 text-blue-600"
+                    : "border-transparent text-gray-500 hover:text-gray-700"
+                }`}
+              >
+                <div className="flex items-center space-x-2">
+                  <FaLanguage />
+                  <span>Language</span>
+                </div>
+              </button>
             </nav>
           </div>
 
